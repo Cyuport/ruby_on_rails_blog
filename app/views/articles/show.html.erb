@@ -1,0 +1,18 @@
+<p>
+  <strong>标题:</strong>
+  <%= @article.title %>
+</p>
+<p>
+  <strong>正文:</strong>
+  <%= @article.text %>
+</p>
+
+<h2>评论区</h2>
+<%= render @article.comments %>
+
+<h2>添加评论:</h2>
+<%= render 'comments/form' %>
+
+
+<%= link_to '编辑这篇文章', edit_article_path(@article) %>
+<%= link_to '回到主页',articles_path %>
