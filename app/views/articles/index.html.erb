@@ -1,13 +1,19 @@
+<% provide(:title, "主页") %>
+<div class="center jumbotron">
 <h1 style="text-align:center">什么都没有的博客主页</h1>
 <hr>
-
+<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+<div>
+<%= image_tag("cat.jpg", alt: "cat") %>
+</div>
+<hr>
 <%= link_to '只要你点了这个按钮，就可以召唤一个0费但是并没有什么卵用的新文章', new_article_path %>
 <hr>
 
 <table>
   <tr><caption>下面是铺场凑数的测试文章</caption>
     <th>瞎起的标题</th>
-    
+
   </tr>
   <% @articles.each do |article| %>
     <tr>
@@ -19,3 +25,5 @@
     </tr>
   <% end %>
 </table>
+
+</div>

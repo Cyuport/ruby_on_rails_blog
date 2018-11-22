@@ -1,0 +1,24 @@
+<% provide(:title, "登录/Log in") %>
+<h1>登录/Log in</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email, "邮件地址/email"%>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password, "密码/password"%>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>在这台电脑上维持登录状态</span>
+      <% end %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>还没有账号？ <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>

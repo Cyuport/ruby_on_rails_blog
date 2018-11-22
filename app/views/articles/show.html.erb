@@ -1,3 +1,4 @@
+<% provide(:title, @article.title) %>
 <p>
   <strong>标题:</strong>
   <%= @article.title %>
@@ -12,6 +13,7 @@
 
 <h2>添加评论:</h2>
 <%= render 'comments/form' %>
+
 
 
 <%= link_to '编辑这篇文章', edit_article_path(@article) %>
