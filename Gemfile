@@ -8,7 +8,7 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'bootstrap-sass',    '3.3.6'
+gem 'bootstrap-sass',    '3.3.7'
 # Use bootstrap-sass
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -47,3 +47,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'faker',  '1.7.3'
+
+gem 'will_paginate'
+gem 'bootstrap-will_paginate', '1.0.0'
