@@ -14,7 +14,15 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  # 云端 IDE
+host = 'ruby-on-rails-blog-master-zhangrui.c9users.io'
+config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+
+# 本地服务器
+host = 'localhost:3000'
+config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
