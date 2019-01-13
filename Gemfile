@@ -55,5 +55,5 @@ gem 'bootstrap-will_paginate', '1.0.0'
 
 group :production do
   gem 'pg',  '0.20.0'
-  gem 'fog', '1.42'
+  gem 'fog', '1.39.0'
 end
