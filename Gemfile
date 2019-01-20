@@ -9,6 +9,9 @@ group :production do
   gem 'thin'
   gem 'pg'
 end
+
+gem 'fog'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -54,10 +57,12 @@ end
 gem 'faker',  '1.7.3'
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
+gem 'fog-aws'
+
 gem 'will_paginate'
 gem 'bootstrap-will_paginate', '1.0.0'
 
-group :production do
+#group :production do
   #gem 'pg',  '0.20.0'
-  gem 'fog', '1.39.0'
-end
+  #gem 'fog', '1.39.0'
+#end

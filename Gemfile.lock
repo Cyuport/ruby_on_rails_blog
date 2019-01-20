@@ -75,18 +75,20 @@ GEM
     ffi (1.10.0)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
-    fog (1.39.0)
+    fog (1.41.0)
       fog-aliyun (>= 0.1.0)
       fog-atmos
       fog-aws (>= 0.6.0)
       fog-brightbox (~> 0.4)
       fog-cloudatcost (~> 0.1.0)
-      fog-core (~> 1.43)
-      fog-digitalocean
+      fog-core (~> 1.45)
+      fog-digitalocean (>= 0.3.0)
       fog-dnsimple (~> 1.0)
       fog-dynect (~> 0.0.2)
       fog-ecloud (~> 0.1)
       fog-google (<= 0.1.0)
+      fog-internet-archive
+      fog-joyent
       fog-json
       fog-local
       fog-openstack
@@ -153,6 +155,13 @@ GEM
       fog-core
       fog-json
       fog-xml
+    fog-internet-archive (0.0.1)
+      fog-core
+      fog-json
+      fog-xml
+    fog-joyent (0.0.1)
+      fog-core (~> 1.42)
+      fog-json (>= 1.0)
     fog-json (1.2.0)
       fog-core
       multi_json (~> 1.10)
@@ -339,7 +348,8 @@ DEPENDENCIES
   carrierwave (= 1.2.2)
   coffee-rails (~> 4.1.0)
   faker (= 1.7.3)
-  fog (= 1.39.0)
+  fog
+  fog-aws
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick (= 4.7.0)
