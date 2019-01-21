@@ -15,6 +15,11 @@
 <%= render 'comments/form' %>
 
 
-
-<%= link_to '编辑这篇文章', edit_article_path(@article) %>
-<%= link_to '回到主页',articles_path %>
+<% if !current_user.nil? && current_user.admin? %>
+  <%= link_to '只有管理员才能编辑帖子', edit_article_path(@article), class: "btn btn-lg btn-primary"%>
+  <br><br>
+  <%= link_to '只有管理员才能删帖', article_path(@article), method: :delete, class: "btn btn-lg btn-danger", data: {confirm: '确定删除?'} %>
+  <br>
+<% end %>
+<br>
+<%= link_to '回到匿名灌水区',articles_path, class: "btn btn-lg btn-success"%>

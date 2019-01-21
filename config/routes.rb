@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get '/micropost', to: 'static_pages#home'
+
   get '/contact', to: 'welcome#contact'
 
   get '/about', to: 'welcome#about'

@@ -1,8 +1,10 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top bg-primary navbar-inverse">
       <div class="container">
-        <%= link_to "假装这是个社交网络", articles_path, id: "logo" %>
+        <%= link_to "注册用户微博", micropost_path, id: "logo" %>
+        <%= link_to "匿名灌水区", articles_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "注册账号", signup_path, class: "btn btn-lg btn-primary" %></li>
             <li><%= link_to "Home",   root_path %></li>
             <li><%= link_to "Help",   help_path %></li>
             <% if logged_in? %>
@@ -15,7 +17,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "个人资料/Profile", current_user %></li>
-                  <li><%= link_to "设定/Settings", edit_user_path(current_user) %></li>
+                  <li><%= link_to "修改资料/Settings", edit_user_path(current_user) %></li>
                   <li class="divider"></li>
                   <li>
                     <%= link_to "退出/Log out", logout_path, method: "delete" %>

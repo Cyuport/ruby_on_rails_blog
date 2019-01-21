@@ -13,8 +13,12 @@ class SessionsController < ApplicationController
         message  = "Account not activated. "
         message += "Check your email for the activation link."
         flash[:warning] = message
-        redirect_to root_url
+        log_in user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        redirect_back_or user
+        #redirect_to root_url
       end
+
     else
       # 创建一个错误消息
       flash.now[:danger] = '邮件地址或密码错误！' # 不完全正确

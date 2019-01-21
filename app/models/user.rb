@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
                                     dependent:   :destroy
     has_many :passive_relationships, class_name:  "Relationship",
                                    foreign_key: "followed_id",
-                                   dependent:   :destroy                                
+                                   dependent:   :destroy
     has_many :following, through: :active_relationships, source: :followed
     has_many :followers, through: :passive_relationships, source: :follower
     attr_accessor :remember_token, :activation_token, :reset_token
@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
 
  has_secure_password
  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
- 
- 
+
+
  # 返回指定字符串的哈希摘要
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -56,9 +56,9 @@ class User < ActiveRecord::Base
     end
       # 激活账户
   def activate
-      update_columns(activated: FILL_IN, activated_at: FILL_IN)
+      update_columns(activated: true, activated_at: Time.zone.now)
   end
-  
+
   # 实现动态流原型
   # 完整的实现参见第 14 章
   def feed
@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
     Micropost.where("user_id IN (#{following_ids})
                      OR user_id = :user_id", user_id: id)
   end
-  
+
   # 关注另一个用户
   def follow(other_user)
     following << other_user
@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
   # 发送激活邮件
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
-    
+
   # 设置密码重设相关的属性
   def create_reset_digest
     self.reset_token = User.new_token
@@ -103,6 +103,6 @@ class User < ActiveRecord::Base
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
-  
+
   end
 end

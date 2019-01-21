@@ -1,29 +1,31 @@
 <% provide(:title, "主页") %>
-<div class="center jumbotron">
-<h1 style="text-align:center">什么都没有的博客主页</h1>
-<hr>
-<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-<div>
-<%= image_tag("cat.jpg", alt: "cat") %>
-</div>
-<hr>
-<%= link_to '只要你点了这个按钮，就可以召唤一个0费但是并没有什么卵用的新文章', new_article_path %>
-<hr>
+  <div class="center jumbotron">
+  <h1 style="text-align:center">匿名灌水区</h1>
+  <hr>
+  <!--<%= link_to "注册账号", signup_path, class: "btn btn-lg btn-success" %>
+  <hr>-->
+  <div>
+  <%= image_tag("cat.jpg", alt: "cat") %>
+  <br>
+  <strong>没有猫的网站是没有灵魂的</strong>
+  </div>
+  <hr>
+  <%= link_to '匿名发帖', new_article_path,class: "btn btn-lg btn-primary" %>
+  <hr>
 
-<table>
-  <tr><caption>下面是铺场凑数的测试文章</caption>
-    <th>瞎起的标题</th>
+  <table>
+    <tr><caption>下面是测试用的凑数文章</caption>
+      <th>标题</th>
 
-  </tr>
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Sure to delete this article?'} %></td>
     </tr>
-  <% end %>
-</table>
+    <% @articles.each do |article| %>
+      <tr>
+        <!--<td><%= article.title %></td>-->
+        <td><%= link_to article.title, article_path(article) %></td>
+        <!--<td><%= link_to '编辑', edit_article_path(article) %></td>
+        <td><%= link_to '删除', article_path(article), method: :delete, data: {confirm: '确定删除?'} %></td>-->
+      </tr>
+    <% end %>
+  </table>
 
 </div>
