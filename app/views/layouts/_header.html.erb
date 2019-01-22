@@ -5,8 +5,8 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "注册账号", signup_path, class: "btn btn-lg btn-primary" %></li>
-            <li><%= link_to "Home",   root_path %></li>
-            <li><%= link_to "Help",   help_path %></li>
+            <li><%= link_to "主页/Home",   root_path %></li>
+            <li><%= link_to "帮助/Help",   help_path %></li>
             <% if logged_in? %>
               <li><%= link_to "用户列表", users_path %></li>
 

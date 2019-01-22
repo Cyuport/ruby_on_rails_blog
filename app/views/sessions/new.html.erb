@@ -9,7 +9,7 @@
       <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :password, "密码/password"%>
-      <%= link_to "(忘记密码)", new_password_reset_path %>
+      <!--<%= link_to "(忘记密码)", new_password_reset_path %>-->
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.label :remember_me, class: "checkbox inline" do %>
@@ -17,9 +17,9 @@
         <span>在这台电脑上维持登录状态</span>
       <% end %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "登录", class: "btn btn-primary" %>
     <% end %>
 
-    <p>还没有账号？ <%= link_to "Sign up now!", signup_path %></p>
+    <p>还没有账号？ <%= link_to "注册", signup_path %></p>
   </div>
 </div>
